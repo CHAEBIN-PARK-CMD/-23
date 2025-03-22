@@ -1,0 +1,79 @@
+#1번과제
+a = [2, 3, 4, 5, 6]
+rev_a = []
+
+# 리스트 a에서 하나씩 pop하여 rev_a에 추가
+for _ in range(len(a)):
+    rev_a.append(a.pop())
+
+# 결과 출력
+print("a =", a)
+print("rev_a =", rev_a)
+
+from collections import Counter
+
+
+#2번과제
+
+from collections import Counter
+
+# 주어진 튜플
+tup = (1, 2, 5, 4, 3, 2, 1, 4, 7, 8, 9, 9, 3, 7, 3)
+
+# 각 원소의 빈도를 계산
+count = Counter(tup)
+
+# 가장 많이 나타나는 요소를 찾고, 그 중 가장 큰 값을 선택
+most_common = max(count.items(), key=lambda x: (x[1], x[0]))
+
+# 결과 출력
+print(f"주어진 튜플은: {tup}")
+print(f"가장 많이 나타나는 원소는: {most_common[0]}")
+
+# 첫 번째 경우
+주어진 튜플은: (1, 2, 5, 4, 3, 2, 1, 4, 7, 8, 9, 9, 3, 7, 3)
+가장 많이 나타나는 원소는: 3
+
+# 두 번째 경우 
+주어진 튜플은: (1, 2, 5, 4, 3, 2, 9, 4, 7, 8, 9, 9, 3, 7, 3)
+가장 많이 나타나는 원소는: 9
+
+#3-1 과제
+# 메뉴와 가격을 딕셔너리로 정의
+menu = {
+    "Americano": 3000,
+    "Ice Americano": 3500,
+    "Cappuccino": 4000,
+    "Cafe Latte": 4500,
+    "Espresso": 3600
+}
+
+# 메뉴 출력
+for key in menu:
+    print("{:16s}  가격 : {:,}원".format(key, menu[key]))
+
+
+#3-2 과제 
+# 메뉴와 가격을 딕셔너리로 정의
+menu = {
+    "Americano": 3000,
+    "Ice Americano": 3500,
+    "Cappuccino": 4000,
+    "Cafe Latte": 4500,
+    "Espresso": 3600
+}
+
+# 메뉴 출력
+
+for key in menu:
+    print("{:16s}  가격 : {:,}원".format(key, menu[key]))
+
+# 사용자 입력 받기
+choice = input('위의 메뉴중 하나를 선택하세요: ')
+
+# 선택한 메뉴가 menu에 있는지 확인
+if choice in menu.keys():
+    print('{}는 {:,}원 입니다. 결제를 부탁합니다.'.format(choice, menu[choice]))
+else:
+    print('미안합니다. {}는 메뉴에 없습니다'.format(choice))
+
